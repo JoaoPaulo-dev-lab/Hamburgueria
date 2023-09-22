@@ -188,7 +188,7 @@ export default defineComponent({
       font-weight: bold;
       border: 2px solid #222;
       padding: 5px;
-      font-size: 12px;
+      font-size: 10px;
       margin: 0 auto;
       border-radius: 7px;
     }

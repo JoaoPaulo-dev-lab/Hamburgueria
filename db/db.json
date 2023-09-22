@@ -98,7 +98,7 @@
         "Salame",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 4
     },
     {
@@ -108,7 +108,7 @@
       "opcionais": [
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 6
     },
     {
@@ -120,7 +120,7 @@
         "Salame",
         "Cheddar"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 7
     },
     {
@@ -133,6 +133,18 @@
       ],
       "status": "Solicitado",
       "id": 8
+    },
+    {
+      "nome": "José Damião Viana do Nascimento",
+      "carne": "Picanha",
+      "pao": "Integral",
+      "opcionais": [
+        "Cheddar",
+        "Tomate",
+        "Salame"
+      ],
+      "status": "Em produção",
+      "id": 9
     }
   ]
 }

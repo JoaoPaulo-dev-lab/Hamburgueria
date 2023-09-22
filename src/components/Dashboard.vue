@@ -92,17 +92,7 @@
           });
   
           const res = await req.json()
-          // colocando uma msg do sistema:
-          this.msg = `Seu pedido foi realizado(Pedido Nº ${res.id})`;
-            
-            // limpar mensagem após 3s:
-            setTimeout(() => this.msg = "",3000);
-            
-            // limpando os campos após preencher e fazer o pedido:
-            this.nome = "";
-            this.sabor = "";
-            this.opcionais = ""
-  
+          
         }
       },
       mounted () {
@@ -161,6 +151,7 @@
       margin: 0 auto;
       cursor: pointer;
       transition: .5s;
+      border-radius: 5px;
     }
     
     .delete-btn:hover {
