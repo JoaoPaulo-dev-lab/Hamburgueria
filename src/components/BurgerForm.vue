@@ -95,9 +95,9 @@ export default defineComponent({
             setTimeout(() => this.msg = "", 3000)
 
             // Limpar campos
-            this.nome =null 
-            this.carne =null
-            this.pao =null
+            this.nome = null 
+            this.carne = null
+            this.pao = null
             this.opcionais = []
         }
     },

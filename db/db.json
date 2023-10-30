@@ -124,17 +124,6 @@
       "id": 7
     },
     {
-      "nome": "Pedro Gomes",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Cheddar",
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 8
-    },
-    {
       "nome": "José Damião Viana do Nascimento",
       "carne": "Picanha",
       "pao": "Integral",
