@@ -124,16 +124,16 @@
       "id": 7
     },
     {
-      "nome": "José Damião Viana do Nascimento",
+      "nome": "José Damião Viana",
       "carne": "Picanha",
       "pao": "Integral",
       "opcionais": [
-        "Cheddar",
         "Tomate",
-        "Salame"
+        "Pepino",
+        "Cebola roxa"
       ],
-      "status": "Em produção",
-      "id": 9
+      "status": "Solicitado",
+      "id": 8
     }
   ]
 }
