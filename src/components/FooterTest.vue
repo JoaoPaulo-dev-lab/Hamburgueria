@@ -4,22 +4,27 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    name: "FooterTest",
+  <script lang="ts">
+  import { defineComponent } from 'vue';
 
-    
-    methods: {
-      getFullYear(){
-        const year = document.getElementById('year')
-        const anoAtual = new Date();
-        year.innerHTML = anoAtual.getFullYear()
+  export default defineComponent({
+  name: "FooterTest",
+
+  methods: {
+    getFullYear(): void {
+      const year = document.getElementById('year');
+      const anoAtual = new Date();
+      if (year) {
+        year.innerHTML = anoAtual.getFullYear().toString();
       }
-    },
-    mounted(){
-      this.getFullYear()
     }
+  },
+  mounted() {
+    this.getFullYear();
   }
+});
+
+
   </script>
   
   <style scoped>

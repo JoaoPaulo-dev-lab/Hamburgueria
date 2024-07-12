@@ -34,95 +34,94 @@
   </div>
 </template>
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue';
 import MessageTest from './MessageTest.vue';
-
+interface Ingredient {
+  id: number,
+  tipo: string
+}
+interface BurgerFormData {
+  paes: Ingredient[] | null,
+  carnes: Ingredient[] | null,
+  opcionaisdata: Ingredient[] | null,
+  nome: string | null,
+  pao: string | null,
+  carne: string | null,
+  opcionais: string[],
+  msg: string
+}
+interface BurgerOrder {
+  nome: string | null,
+  pao: string | null,
+  carne: string | null,
+  opcionais: string[],
+  status: string
+}
 export default defineComponent({
   name: "BurgerForm",
-    data() {
-        return {
-            paes: null,
-            carnes: null,
-            opcionaisdata: null,
-            nome: null,
-            pao: null,
-            carne: null,
-            opcionais: [],
-            msg: ""
-        } as {
-          paes: null | any,
-          carnes: null | any,
-          opcionaisdata: null | any,
-          nome: null | any,
-          pao: null | any,
-          carne: null | any,
-          opcionais: [] | any
-          msg: string | any
-        }
+  data(): BurgerFormData {
+    return {
+      paes: null,
+      carnes: null,
+      opcionaisdata: null,
+      nome: null,
+      pao: null,
+      carne: null,
+      opcionais: [],
+      msg: ""
+    };
+  },
+  methods: {
+    async getIngredientes(): Promise<void> {
+      const req = await fetch('http://localhost:3000/ingredientes');
+      const data = await req.json();
+      this.paes = data.paes;
+      this.carnes = data.carnes;
+      this.opcionaisdata = data.opcionais;
     },
-    methods: {
-        async getIngredientes(): Promise<void>{
-            const req = await fetch('http://localhost:3000/ingredientes')
-            const data = await req.json()
-
-            this.paes = data.paes;
-            this.carnes = data.carnes;
-            this.opcionaisdata = data.opcionais
-        },
-        async createBurger(e: Event): Promise<void>{
-            e.preventDefault()
-
-            const data = {
-                nome: this.nome,
-                carne: this.carne,
-                pao: this.pao,
-                opcionais: Array.from(this.opcionais),
-                status: "Solicitado"
-            }
-
-            const dataJson = JSON.stringify(data)
-
-            const req: Response = await fetch("http://localhost:3000/burgers", {
-                method: "POST",
-                headers: {"Content-Type" : "application/json"},
-                body: dataJson
-            });
-
-            const res = await req.json()
-
-            this.msg = `Pedido Nº${res.id} realizado com sucesso!`
-            
-            setTimeout(() => this.msg = "", 3000)
-
-            // Limpar campos
-            this.nome = null 
-            this.carne = null
-            this.pao = null
-            this.opcionais = []
-        }
-    },
-    mounted(){
-        this.getIngredientes()
-    },
-     components: {
-         MessageTest
-     }
-})
-
+    async createBurger(e: Event): Promise<void> {
+      e.preventDefault();
+      const data: BurgerOrder = {
+        nome: this.nome,
+        carne: this.carne,
+        pao: this.pao,
+        opcionais: Array.from(this.opcionais),
+        status: "Solicitado"
+      };
+      const dataJson = JSON.stringify(data);
+      const req: Response = await fetch("http://localhost:3000/burgers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson
+      });
+      const res = await req.json();
+      this.msg = `Pedido Nº${res.id} realizado com sucesso!`;
+      setTimeout(() => this.msg = "", 3000);
+      // Limpar campos
+      this.nome = null;
+      this.carne = null;
+      this.pao = null;
+      this.opcionais = [];
+    }
+  },
+  mounted() {
+    this.getIngredientes();
+  },
+  components: {
+    MessageTest
+  }
+});
 </script>
-
 <style scoped>
-#burger-form {
+  #burger-form {
     max-width: 400px;
     margin: 0 auto;
   }
-
   .input-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
   }
-
   label {
     font-weight: bold;
     margin-bottom: 15px;
@@ -130,38 +129,31 @@ export default defineComponent({
     padding: 5px 10px;
     border-left: 4px solid #fcba03;
   }
-
   input, select {
     padding: 5px 10px;
     width: 300px;
   }
-
   #opcionais-container {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
   #opcionais-title {
     width: 100%;
   }
-
   .checkbox-container {
     display: flex;
     align-items: flex-start;
     width: 50%;
     margin-bottom: 20px;
   }
-
   .checkbox-container span,
   .checkbox-container input {
     width: auto;
   }
-
   .checkbox-container span {
     margin-left: 6px;
     font-weight: bold;
   }
-
   .submit-btn {
     background-color: #222;
     color:#fcba03;
@@ -174,15 +166,13 @@ export default defineComponent({
     border-radius: 7px;
     transition: .5s;
   }
-
   .submit-btn:hover {
     background-color: transparent;
     color: #222;
     transition: .5s;
   }
-
   @media screen and(max-width: 760px) {
-      .submit-btn {
+    .submit-btn {
       background-color: #222;
       color:#fcba03;
       font-weight: bold;

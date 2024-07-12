@@ -4,19 +4,15 @@
     <div>
       <router-view></router-view>
     </div>
-      
-
     <FooterTest/>
   </div>
 </template>
-
 <script lang="ts">
 import { defineComponent } from 'vue';
 import NavbarTest from './components/NavbarTest.vue';
 import FooterTest from './components/FooterTest.vue';
-
 export default defineComponent({
-  data: function(){
+  data() {
     return {
       logo_src: "/img/logo.png",
       app_name: "Monte Seu Burger"
@@ -27,9 +23,7 @@ export default defineComponent({
     FooterTest
   }
 })
-
 </script>
-
 <style>
 * {
     font-family: Helvetica;
@@ -37,12 +31,10 @@ export default defineComponent({
     margin: 0;
     box-sizing: border-box;
   }
-
   .main-container {
     margin: 50px;
     min-height: 150px;
   }
-
   h1 {
     text-align: center;
     font-size: 42px;

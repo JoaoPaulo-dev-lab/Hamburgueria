@@ -33,7 +33,7 @@ export default class BannerTest extends Vue{}
         padding: 20px 40px;
     }
 
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 1083px) {
         #main-banner{
             background-repeat: no-repeat;
             background-position: center;

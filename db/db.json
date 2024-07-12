@@ -132,16 +132,15 @@
         "Pepino",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 8
     },
     {
-      "nome": "José Damião Viana",
+      "nome": "Maria da SIlva",
       "carne": "Maminha",
-      "pao": "3 Queijos",
+      "pao": "Integral",
       "opcionais": [
-        "Salame",
-        "Cheddar"
+        "Bacon"
       ],
       "status": "Solicitado",
       "id": 9
