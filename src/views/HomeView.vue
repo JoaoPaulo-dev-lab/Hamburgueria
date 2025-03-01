@@ -2,7 +2,7 @@
   <div>
     <BannerTest/>
     <div class="main-container">
-      <h1>Monte o seu Hamburguer:</h1>
+      <h1>Preencha os campos abaixo:</h1>
     </div>
     <BurgerForm/>
   </div>
